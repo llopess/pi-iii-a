@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PI-III-A</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        background: #0f0f0f;
+        color: white;
+    }
+    .container {
+        width: calc(100vw - 20px)
+    }
+    ul {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    ul > li {
+        text-decoration: none;
+    }
+</style>
+<body>
+    <header class="container">
+        <p>PI-III-A</p>
+        <ul>
+            <li onclick="selectTab('teams')">Times</li>
+            <li onclick="selectTab('students')">Estudantes</li>
+            <li onclick="selectTab('courses')">Cursos</li>
+        </ul>
+    </header>
+    <main>
+        <section id="students">
+            <label for="search"></label>
+            <input type="text" name="search" placeholder="Estudantes">
+            <button>Pesquisar</button>
+        </section>
+
+        <section id="courses">
+            <label for="search"></label>
+            <input type="text" name="search" placeholder="Cursos">
+            <button>Pesquisar</button>
+        </section>
+
+        <section id="teams">
+            <label for="search"></label>
+            <input type="text" name="search" placeholder="Times">
+            <button>Pesquisar</button>
+        </section>
+    </main>
+</body>
+<script>
+    function selectTab(tab) {
+        console.log(" SELECTED TAB" , tab)
+        const a = document.getElementsByTagName('section')
+        for(const i of a) {
+            if(i.id.toString() !== tab.toString()) {
+                console.log("IF" , i)
+                i.setAttribute("hidden", "true")
+            } else {
+                console.log("ELSE" , i)
+                i.removeAttribute("hidden")
+                i.setAttribute("color", "red")
+            }
+        }
+        console.log(a)
+    }
+</script>
+</html>

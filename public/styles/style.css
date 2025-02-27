@@ -1,0 +1,87 @@
+:root {
+    --color-bg-dark: #121212;         /* Fundo principal */
+    --color-bg-secondary: #1E1E1E;    /* Fundo secundário (ex: header) */
+    --color-text-primary: #E0E0E0;    /* Texto principal */
+    --color-text-secondary: #B0B0B0;  /* Texto secundário */
+    --color-accent: #FFB400;          /* Cor de destaque (botões, links) */
+    --color-accent-hover: #E0A000;    /* Cor de destaque ao passar o mouse */
+  }
+
+body {
+    margin: 0;
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-primary);
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: var(--color-bg-secondary);
+    color: var(--color-text-primary);
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .nav-menu {
+    display: flex;
+    gap: 40px; /* Espaçamento igual entre os itens */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-menu li {
+    display: flex;
+    cursor: pointer;
+  }
+  
+  .nav-menu li {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+  .nav-menu li:hover {
+    color: var(--color-accent); /* Cor de destaque ao passar o mouse */
+  }
+  
+  main {
+    display: grid;
+    grid-template-columns: 1fr; /* Uma coluna (empilhadas em telas menores) */
+    gap: 20px; /* Espaçamento entre as seções */
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  section {
+    background-color: var(--color-bg-secondary);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Layout responsivo: em telas maiores, mostrar lado a lado */
+  @media (min-width: 768px) {
+    main {
+      grid-template-columns: repeat(3, 1fr); /* Três colunas */
+    }
+  }
+a {
+    text-decoration: none;
+    color: var(--color-text-primary)
+}
+  .selected-tab {
+    a {
+        text-decoration: none;
+        color: var(--color-accent);
+    }
+  }
+  
